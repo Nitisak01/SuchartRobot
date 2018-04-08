@@ -1,0 +1,26 @@
+--cpu Cortex-M7.fp.sp
+"mainboard-spi\startup_stm32f746xx.o"
+"mainboard-spi\stm32f7xx_hal_i2c_ex.o"
+"mainboard-spi\stm32f7xx_hal_flash_ex.o"
+"mainboard-spi\stm32f7xx_hal_gpio.o"
+"mainboard-spi\stm32f7xx_hal_dma_ex.o"
+"mainboard-spi\stm32f7xx_hal_pwr.o"
+"mainboard-spi\stm32f7xx_hal_i2c.o"
+"mainboard-spi\stm32f7xx_hal_cortex.o"
+"mainboard-spi\stm32f7xx_hal_dma.o"
+"mainboard-spi\stm32f7xx_hal_tim.o"
+"mainboard-spi\stm32f7xx_hal_rcc_ex.o"
+"mainboard-spi\stm32f7xx_hal_tim_ex.o"
+"mainboard-spi\stm32f7xx_hal_rcc.o"
+"mainboard-spi\stm32f7xx_hal_pwr_ex.o"
+"mainboard-spi\stm32f7xx_hal.o"
+"mainboard-spi\stm32f7xx_hal_flash.o"
+"mainboard-spi\stm32f7xx_hal_spi.o"
+"mainboard-spi\system_stm32f7xx.o"
+"mainboard-spi\stm32f7xx_hal_msp.o"
+"mainboard-spi\main.o"
+"mainboard-spi\stm32f7xx_it.o"
+--library_type=microlib --strict --scatter "MainBoard-SPI\MainBoard-SPI.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "MainBoard-SPI.map" -o MainBoard-SPI\MainBoard-SPI.axf
