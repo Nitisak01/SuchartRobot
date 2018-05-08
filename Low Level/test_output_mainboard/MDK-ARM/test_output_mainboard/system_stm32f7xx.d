@@ -31,3 +31,7 @@ test_output_mainboard\system_stm32f7xx.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/st
 test_output_mainboard\system_stm32f7xx.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr.h
 test_output_mainboard\system_stm32f7xx.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr_ex.h
 test_output_mainboard\system_stm32f7xx.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_spi.h
+test_output_mainboard\system_stm32f7xx.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h
+test_output_mainboard\system_stm32f7xx.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
+test_output_mainboard\system_stm32f7xx.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h
+test_output_mainboard\system_stm32f7xx.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h

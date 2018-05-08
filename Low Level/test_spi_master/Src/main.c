@@ -55,7 +55,7 @@ DMA_HandleTypeDef hdma_spi1_tx;
 #define spiDis HAL_GPIO_WritePin(Select6_GPIO_Port, Select6_Pin, GPIO_PIN_SET);
 
 uint8_t rx[4];
-uint8_t tx[4] = {1,2,3,6};
+uint8_t tx[7] = {0xff,0xff,0x01,0x03,0x00,0x00,0xfb};
 
 
 /* USER CODE END PV */
@@ -112,12 +112,13 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+		spiEn;
+		HAL_SPI_Transmit(&hspi1,tx,7,100);
+		//HAL_SPI_Receive_DMA(&hspi1,rx,4);
+		spiDis;
   while (1)
   {
-		spiEn;
-		HAL_SPI_Transmit(&hspi1,tx,4,1000);
-		HAL_SPI_Receive_DMA(&hspi1,rx,4);
-		spiDis;
+		
 		
   /* USER CODE END WHILE */
 
@@ -127,7 +128,6 @@ int main(void)
   /* USER CODE END 3 */
 
 }
-
 
 /**
   * @brief System Clock Configuration
@@ -206,7 +206,7 @@ static void MX_SPI1_Init(void)
   hspi1.Init.CLKPolarity = SPI_POLARITY_LOW;
   hspi1.Init.CLKPhase = SPI_PHASE_1EDGE;
   hspi1.Init.NSS = SPI_NSS_SOFT;
-  hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_32;
+  hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_256;
   hspi1.Init.FirstBit = SPI_FIRSTBIT_MSB;
   hspi1.Init.TIMode = SPI_TIMODE_DISABLE;
   hspi1.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;

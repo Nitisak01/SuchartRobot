@@ -42,6 +42,8 @@ extern uint8_t run_mode;
 
 /* External variables --------------------------------------------------------*/
 extern SPI_HandleTypeDef hspi1;
+extern TIM_HandleTypeDef htim2;
+extern UART_HandleTypeDef huart3;
 
 /******************************************************************************/
 /*            Cortex-M7 Processor Interruption and Exception Handlers         */ 
@@ -199,20 +201,37 @@ void SysTick_Handler(void)
 void EXTI0_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI0_IRQn 0 */
-	for (int i = 0 ; i<1000000;i++);
-	if(HAL_GPIO_ReadPin(Start_GPIO_Port,Start_Pin)){
+	
+	for (int i = 0 ; i<400000;i++);
+	
+	if(HAL_GPIO_ReadPin(Start_GPIO_Port,Start_Pin) == 1){
 	  if(run_mode == 1){
 	    run_mode	= 0;
 	  }
 	  else{
+			
 	    run_mode	= 1;
 	  }
 	}
-	
+
   /* USER CODE END EXTI0_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
   /* USER CODE BEGIN EXTI0_IRQn 1 */
   /* USER CODE END EXTI0_IRQn 1 */
+}
+
+/**
+* @brief This function handles TIM2 global interrupt.
+*/
+void TIM2_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM2_IRQn 0 */
+
+  /* USER CODE END TIM2_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim2);
+  /* USER CODE BEGIN TIM2_IRQn 1 */
+
+  /* USER CODE END TIM2_IRQn 1 */
 }
 
 /**
@@ -225,8 +244,20 @@ void SPI1_IRQHandler(void)
   /* USER CODE END SPI1_IRQn 0 */
   HAL_SPI_IRQHandler(&hspi1);
   /* USER CODE BEGIN SPI1_IRQn 1 */
-  HAL_SPI_RxCpltCallback(&hspi1);
   /* USER CODE END SPI1_IRQn 1 */
+}
+
+/**
+* @brief This function handles USART3 global interrupt.
+*/
+void USART3_IRQHandler(void)
+{
+  /* USER CODE BEGIN USART3_IRQn 0 */
+	HAL_GPIO_TogglePin(LED_B_3_GPIO_Port, LED_B_3_Pin);
+  /* USER CODE END USART3_IRQn 0 */
+  HAL_UART_IRQHandler(&huart3);
+  /* USER CODE BEGIN USART3_IRQn 1 */
+  /* USER CODE END USART3_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */

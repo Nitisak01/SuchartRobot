@@ -18,6 +18,7 @@
 "test_output_mainboard\stm32f7xx_hal_spi.o"
 "test_output_mainboard\stm32f7xx_hal_adc_ex.o"
 "test_output_mainboard\stm32f7xx_hal_adc.o"
+"test_output_mainboard\stm32f7xx_hal_uart.o"
 "test_output_mainboard\stm32f7xx_hal_msp.o"
 "test_output_mainboard\main.o"
 "test_output_mainboard\stm32f7xx_it.o"

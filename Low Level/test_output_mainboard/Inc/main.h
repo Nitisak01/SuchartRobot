@@ -51,8 +51,18 @@
 
 #define Relay4_Pin GPIO_PIN_2
 #define Relay4_GPIO_Port GPIOE
+#define AnalogJ4_Pin GPIO_PIN_3
+#define AnalogJ4_GPIO_Port GPIOF
+#define AnalogJ5_Pin GPIO_PIN_5
+#define AnalogJ5_GPIO_Port GPIOF
+#define AnalogJ2_Pin GPIO_PIN_0
+#define AnalogJ2_GPIO_Port GPIOC
+#define AnalogJ3_Pin GPIO_PIN_3
+#define AnalogJ3_GPIO_Port GPIOC
 #define Relay3_Pin GPIO_PIN_0
 #define Relay3_GPIO_Port GPIOA
+#define AnalogJ1_Pin GPIO_PIN_3
+#define AnalogJ1_GPIO_Port GPIOA
 #define Relay2_Pin GPIO_PIN_0
 #define Relay2_GPIO_Port GPIOB
 #define Relay8_Pin GPIO_PIN_2
@@ -72,6 +82,8 @@
 #define LED4_GPIO_Port GPIOB
 #define LED3_Pin GPIO_PIN_13
 #define LED3_GPIO_Port GPIOB
+#define LED_B_3_Pin GPIO_PIN_14
+#define LED_B_3_GPIO_Port GPIOB
 #define LED2_Pin GPIO_PIN_15
 #define LED2_GPIO_Port GPIOB
 #define Relay5_Pin GPIO_PIN_11
@@ -94,6 +106,8 @@
 #define LED8_GPIO_Port GPIOB
 #define LED7_Pin GPIO_PIN_5
 #define LED7_GPIO_Port GPIOB
+#define LED_B_2_Pin GPIO_PIN_7
+#define LED_B_2_GPIO_Port GPIOB
 #define Relay1_Pin GPIO_PIN_0
 #define Relay1_GPIO_Port GPIOE
 
